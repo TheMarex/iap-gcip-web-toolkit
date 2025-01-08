@@ -34,5 +34,7 @@ RUN npm install --only=production
 # Copy local code to the container image.
 COPY . ./
 
+EXPOSE 8080
+
 # Run the web service on container startup.
 CMD [ "sh","-c","npm start" ]
