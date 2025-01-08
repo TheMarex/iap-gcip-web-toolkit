@@ -18,7 +18,7 @@ import {ApplicationData} from './metadata-server';
 
 /** List compute backend service IDs endpoint. */
 const LIST_COMPUTE_BACKEND_SERVICE_IDS_URL =
-    'https://compute.googleapis.com/compute/v1/projects/{projectId}/global/backendServices';
+    'https://compute.googleapis.com/compute/v1/projects/{projectId}/{region}/backendServices';
 /** Get IAP settings endpoint. */
 const GET_IAP_SETTINGS_URL =
     'https://iap.googleapis.com/v1/projects/{projectNumber}/iap_web/{id}:iapSettings';
@@ -205,6 +205,7 @@ export class IapSettingsHandler {
         return this.listComputeBackendServiceIdsHandler.send({
           urlParams: {
             projectId,
+            region: 'regions/europe-west1', // FIXME: This is just for testing. Should be dynamic.
           },
         }, DEFAULT_ERROR_COMPUTE_BACKEND_SERIVCE_IDS_LIST);
       })
