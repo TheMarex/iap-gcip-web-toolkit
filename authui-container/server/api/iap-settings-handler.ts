@@ -184,7 +184,7 @@ export class IapSettingsHandler {
       })
       .then((backendServiceIds) => {
         backendServiceIds.forEach((backendServiceId) =>  {
-          iapResourceIds.push(`compute/services/${backendServiceId}`);
+          iapResourceIds.push(`compute-europe-west1/services/${backendServiceId}`);
         });
         return iapResourceIds;
       })
